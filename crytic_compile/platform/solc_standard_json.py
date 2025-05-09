@@ -514,3 +514,16 @@ class SolcStandardJson(Solc):
             List[str]: The guessed unit tests commands
         """
         return []
+    
+    @staticmethod
+    def is_supported(target: str, **kwargs: str) -> bool:
+        """Check if the target is a Solidity file
+
+        Args:
+            target (str): path to the target
+            **kwargs: optional arguments. Not used
+
+        Returns:
+            bool: True if the target is a Solidity file
+        """
+        return True
