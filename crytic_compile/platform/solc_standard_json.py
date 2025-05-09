@@ -318,7 +318,7 @@ def parse_standard_json_output(
     """
 
     skip_filename = compilation_unit.compiler_version.version in [f"0.4.{x}" for x in range(0, 10)]
-    LOGGER.warning("FORK WORKS 2!!!!")
+    LOGGER.warning(targets_json)
     if "sources" in targets_json:
         for path, info in targets_json["sources"].items():
             LOGGER.warning(path, info)
