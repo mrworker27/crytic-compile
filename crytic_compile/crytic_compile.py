@@ -169,6 +169,7 @@ class CryticCompile:
                 )
                 # If no platform has been found or if it's the Solc platform, we can't automatically compile.
                 if platform_wd and not isinstance(platform_wd, Solc):
+                    LOGGER.warning("HERE got", platform_config)
                     platform_config = platform_wd.config(str(self._working_dir))
                     if platform_config:
                         kwargs["solc_args"] = ""
