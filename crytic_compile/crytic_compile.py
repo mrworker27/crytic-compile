@@ -207,7 +207,7 @@ class CryticCompile:
         self._bytecode_only = False
 
         self.libraries: Optional[Dict[str, int]] = _extract_libraries(kwargs.get("compile_libraries", None))  # type: ignore
-
+        LOGGER.warning(kwargs)
         self._compile(**kwargs)
 
     @property
