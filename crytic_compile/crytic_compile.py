@@ -153,11 +153,13 @@ class CryticCompile:
 
         # pylint: disable=too-many-nested-blocks
         if isinstance(target, str):
+            LOGGER.warning("HERE 1")
             platform = self._init_platform(target, **kwargs)
             # If the platform is Solc it means we are trying to compile a single
             # we try to see if we are in a known compilation framework to retrieve
             # information like remappings and solc version
             if isinstance(platform, Solc):
+                LOGGER.warning("HERE 2")
                 # Try to get the platform of the current working directory
                 platform_wd = next(
                     (
@@ -208,6 +210,8 @@ class CryticCompile:
         self._bytecode_only = False
 
         self.libraries: Optional[Dict[str, int]] = _extract_libraries(kwargs.get("compile_libraries", None))  # type: ignore
+        
+        LOGGER.warning(kwargs)
         self._compile(**kwargs)
 
     @property
