@@ -321,7 +321,7 @@ def parse_standard_json_output(
     LOGGER.warning(targets_json)
     if "sources" in targets_json:
         for path, info in targets_json["sources"].items():
-            LOGGER.warning(path, info)
+            LOGGER.warning(path, type(info))
             if skip_filename:
                 path = convert_filename(
                     path,
