@@ -526,4 +526,5 @@ class SolcStandardJson(Solc):
         Returns:
             bool: True if the target is a Solidity file
         """
+        LOGGER.warning("MOO-MOO-MOO!!!!!!!")
         return True
