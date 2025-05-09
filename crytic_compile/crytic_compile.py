@@ -170,7 +170,10 @@ class CryticCompile:
                     None,
                 )
                 
-                LOGGER.info("HERE 3", platform_wd)
+                for p in get_platforms():
+                    LOGGER.warning(vars(p))
+                    if p.is_supported(str(self._working_dir), **kwargs):
+                        LOGGER.warning("catch!")
                 
                 # If no platform has been found or if it's the Solc platform, we can't automatically compile.
                 if platform_wd and not isinstance(platform_wd, Solc):
