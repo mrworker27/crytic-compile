@@ -470,7 +470,7 @@ class SolcStandardJson(Solc):
 
         solc_remaps: Optional[Union[str, List[str]]] = kwargs.get("solc_remaps", None)
         solc_working_dir: Optional[str] = kwargs.get("solc_working_dir", None)
-        solc_env: Optional[Dict] = kwargs.get("solc_env", None)
+        solc_env: Optional[Dict] = kwargs.get("solc_solcs_select", None)
 
         compilation_unit = CompilationUnit(crytic_compile, "standard_json")
 
